@@ -1,0 +1,12 @@
+*{
+  font-family: Arial, Helvetica, sans-serif;
+}
+body{
+  background-color: rgb(221, 235, 235)
+}
+
+.form{
+  height: 80%;
+  width: 40rem;
+  background-color: white;
+}
