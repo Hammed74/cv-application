@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useRef } from "react";
 
 export default function Education({
   education,
@@ -11,13 +12,18 @@ export default function Education({
   setSchools,
 }) {
   const [isOpen, setIsOpen] = useState(true);
+  const educationRef = useRef(null)
   function handleSetIsOpen() {
     setIsOpen(!isOpen);
     console.log(activeSchool);
   }
 
+  function handleSave(){
+    educationRef.current.style.animation = "saved 0.4s"
+  }
+
   return (
-    <div className="education-details">
+    <div ref={educationRef} className="education-details">
       <div onClick={handleSetIsOpen} className="close">
         &times;
       </div>
@@ -31,6 +37,7 @@ export default function Education({
           setEdrawer={setEdrawer}
           setSchools={setSchools}
           schools={schools}
+          handleSave={handleSave}
         />
       ) : (
         <UniversityList
@@ -60,17 +67,22 @@ function UniversityList({
 
   function onAddSchool(){
     const newSchoolObj = {
-      id: 12,
+      id: Date.now(),
       school: "Your University",
       degree: "Your Degree",
       startDate: "2019-01",
       endDate: "2023-01",
       location: "University Location",
+      saved: false
     };
     setSchools([...schools,newSchoolObj])
     setActiveSchool(newSchoolObj)
     setEdrawer(true)
-    
+  }
+
+  function onDeleteItems(id, event){
+    event.stopPropagation()
+    setSchools(schools.filter(school => school.id != id))
   }
   return (
     <>
@@ -82,6 +94,7 @@ function UniversityList({
               key={school.id}
             >
               {school.school}
+              <p onClick={(event) => onDeleteItems(school.id,event)} className="trash">🗑️</p>
             </li>
           );
         })}
@@ -98,7 +111,8 @@ function CurrentSchool({
   setActiveSchool,
   setEdrawer,
   setSchools,
-  schools
+  schools,
+  handleSave
 }) {
   function editSchool(e) {
     const section = e.target.className;
@@ -116,6 +130,24 @@ function CurrentSchool({
             return school
         }))
   }
+
+  function handleBack(){
+    if(activeSchool.saved === false){
+        setSchools(schools.filter((school) => school.saved != false));
+    }
+    setEdrawer(false)
+  }
+function saveSchool(id){
+    handleSave()
+        setSchools(
+          schools.map((school) => {
+            if (school.id === id) {
+              return {...school, saved: true};
+            }
+            return school;
+          })
+        );
+      }
 
 
   console.log(activeSchool.school);
@@ -154,10 +186,10 @@ function CurrentSchool({
         onChange={(e) => editSchool(e)}
       />
       <div className="buttons">
-          <div onClick={() => setEdrawer(false)} className="back-button">
+          <div onClick={handleBack} className="back-button">
             BACK
           </div>
-          <div className="save">SAVE</div>
+          <div onClick={() => saveSchool(activeSchool.id)} className="save">SAVE</div>
       </div>
     </>
   );

@@ -15,7 +15,8 @@ const defaultEducation = {
   degree: 'Your Degree',
   startDate: '2019-01',
   endDate: '2023-01',
-  location: 'University Location'
+  location: 'University Location',
+  saved: true
 
 }
 function App() {

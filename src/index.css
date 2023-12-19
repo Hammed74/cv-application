@@ -66,7 +66,7 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: #ecceb6;
+  background-color: #1e1e1e;
 }
 
 .sub-resume-details {
@@ -76,6 +76,7 @@ body {
 
 .sub-resume-details > p {
   padding: 2rem 1.5rem;
+  color: white;
 }
 
 .form-elements {
@@ -135,7 +136,7 @@ hr {
 
 .resume-education-details {
   display: grid;
-  grid-template-columns: 1fr 10% 10%;
+  grid-template-columns: 1fr 12% 12%;
   grid-template-rows: 1fr 1fr 1fr;
 }
 
@@ -186,12 +187,13 @@ ul{
 li {
   list-style: none;
   border-bottom: 1px solid black;
-  width: 100%;
+  width: 85%;
   text-align: center;
-  padding-bottom: 1rem;
+  padding: 1rem 0;
   text-transform: uppercase;
   font-weight: 700;
   cursor: pointer;
+  position: relative;
 }
 
 .back-button{
@@ -227,4 +229,25 @@ li {
 
 .add-school:hover{
       background-color: #8da7b1;
+}
+
+.trash{
+  display: inline;
+  position: absolute;
+  right: 5px;
+  bottom: 13px;
+  cursor: pointer;
+}
+
+@keyframes saved{
+
+  0%{
+    background-color: #c1ced3;
+  }
+  50%{
+    background-color: rgb(52, 233, 52);
+  }
+  100%{
+    background-color: #c1ced3;
+  }
 }
