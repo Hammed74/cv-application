@@ -1,20 +1,28 @@
-*{
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+* {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-body{
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body {
   background-color: #eeedea;
   padding: 2rem;
 }
-.body{
+.body {
   display: flex;
   justify-content: center;
   gap: 2rem;
+  max-width: 1280px;
 }
 
-.title{
+.title {
   text-align: center;
   margin-bottom: 2rem;
   letter-spacing: 0.3rem;
@@ -22,18 +30,17 @@ body{
   font-weight: 600;
 }
 
-
-.form{
+.resume {
   height: 72vh;
-  aspect-ratio: .772;
+  aspect-ratio: 0.772;
   background-color: rgb(255, 255, 255);
   border-radius: 2px;
-  box-shadow: 10px 10px 13px -7px rgba(0,0,0,0.55);
+  box-shadow: 10px 10px 13px -7px rgba(0, 0, 0, 0.55);
 }
 
-.details{
+.personal-details {
   height: 30vh;
-  aspect-ratio: 0.8;
+  width: 24rem;
   background-color: #c1ced3;
   display: flex;
   flex-direction: column;
@@ -41,20 +48,20 @@ body{
   border-radius: 2px;
   justify-content: center;
   align-items: center;
-    box-shadow: 5px 6px 13px -7px rgba(0,0,0,0.55);
+  box-shadow: 5px 6px 13px -7px rgba(0, 0, 0, 0.55);
 }
 
-.details > input{
-border: none;
-border-bottom: 1px solid rgb(41, 41, 41);
-background-color: inherit;
-text-align: center;
-width: 80%;
-font-size: 1rem;
-padding-bottom: 0.5rem;
+.personal-details > input {
+  border: none;
+  border-bottom: 1px solid rgb(41, 41, 41);
+  background-color: inherit;
+  text-align: center;
+  width: 80%;
+  font-size: 1rem;
+  padding-bottom: 0.5rem;
 }
 
-.form-details{
+.resume-details {
   padding-top: 3rem;
   display: flex;
   align-items: center;
@@ -62,12 +69,162 @@ padding-bottom: 0.5rem;
   background-color: #ecceb6;
 }
 
-.sub-form-details{
+.sub-resume-details {
   display: flex;
   justify-content: center;
 }
 
-.sub-form-details > p{
-
+.sub-resume-details > p {
   padding: 2rem 1.5rem;
+}
+
+.form-elements {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.education-details {
+  padding: 2rem 0;
+  position: relative;
+  height: fit-content;
+  width: 24rem;
+  background-color: #c1ced3;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  border-radius: 2px;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5px 6px 13px -7px rgba(0, 0, 0, 0.55);
+}
+
+.education-details > input {
+  border: none;
+  border-bottom: 1px solid rgb(41, 41, 41);
+  background-color: inherit;
+  text-align: center;
+  width: 80%;
+  font-size: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+.resume-container {
+  width: 90%;
+  margin: 1rem auto;
+}
+.resume-education {
+  padding-top: 1rem;
+}
+.resume-education > h3 {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+hr {
+  width: 90%;
+  display: flex;
+}
+
+.break {
+  height: 1px;
+  background-color: black;
+  width: 100%;
+  margin-bottom: 0.4rem;
+}
+
+.resume-education-details {
+  display: grid;
+  grid-template-columns: 1fr 10% 10%;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.resume-university {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.resume-degree {
+  grid-area: 2/1/3/2;
+  margin-left: 2rem;
+}
+.resume-start {
+  grid-area: 1/2/2/3;
+  font-size: 0.8rem;
+  text-align: right;
+}
+
+.resume-end {
+  font-size: 0.8rem;
+  grid-area: 1/3/2/4;
+  text-align: right;
+}
+
+.resume-location {
+  grid-area: 2/2/3/4;
+  margin-top: 0.3rem;
+  font-size: 0.9rem;
+  text-align: right;
+}
+
+.close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  border: none;
+  font-size: 2rem;
+  background-color: inherit;
+  cursor: pointer;
+}
+ul{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+li {
+  list-style: none;
+  border-bottom: 1px solid black;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 1rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.back-button{
+  border: 1px solid black;
+  padding: 2px 4px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.back-button:hover{
+  background-color: #8da7b1;
+}
+.save{
+    border: 1px solid black;
+  padding: 2px 4px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.save:hover{
+    background-color: #8da7b1;
+}
+.buttons{
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}
+
+.add-school{
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.add-school:hover{
+      background-color: #8da7b1;
 }

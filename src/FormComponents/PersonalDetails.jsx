@@ -10,7 +10,7 @@ export default function PersonalDetails({details, setDetails}){
 
     return (
         <>
-        <div className="details">
+        <div className="personal-details">
             <h2>Personal Details</h2>
             <input type="text" className="fullName" value={details.fullName} onChange={(e) => {handleSetDetails(e)}}/>
             <input type="email" className="email" value={details.email} onChange={(e) => {handleSetDetails(e)}} />
