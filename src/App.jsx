@@ -25,11 +25,13 @@ function App() {
       const [activeSchool, setActiveSchool] = useState(education);
       const [edDrawer, setEdDrawer] = useState(false)
       const [schools, setSchools] = useState([education]);
+      const [experiences, setExperiences] = useState([])
+      const [activeExperience, setActiveExperience] = useState(null)
   return (
     <>
       <h1 className="title">RESUME BUILDER</h1>
       <div className="body">
-        <Form details={details} setDetails={setDetails} education={education} setEducation={setEducation} activeSchool={activeSchool} setActiveSchool={setActiveSchool} setEdDrawer={setEdDrawer} edDrawer={edDrawer} schools={schools} setSchools={setSchools}/>
+        <Form experiences={experiences} setExperiences={setExperiences} activeExperience={activeExperience} setActiveExperience={setActiveExperience} details={details} setDetails={setDetails} education={education} setEducation={setEducation} activeSchool={activeSchool} setActiveSchool={setActiveSchool} setEdDrawer={setEdDrawer} edDrawer={edDrawer} schools={schools} setSchools={setSchools}/>
         <Resume details={details} education={education} activeSchool={activeSchool} edDrawer={edDrawer} schools={schools}/>
       </div>
     </>

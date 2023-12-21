@@ -20,6 +20,7 @@ export default function Education({
 
   function handleSave(){
     educationRef.current.style.animation = "saved 0.4s"
+    setEdrawer(false)
   }
 
   return (
@@ -55,7 +56,6 @@ export default function Education({
 function UniversityList({
   schools,
   setSchools,
-  activeSchool,
   setActiveSchool,
   setEdrawer,
 }) {
@@ -105,8 +105,6 @@ function UniversityList({
 }
 
 function CurrentSchool({
-  education,
-  setEducation,
   activeSchool,
   setActiveSchool,
   setEdrawer,
@@ -116,7 +114,7 @@ function CurrentSchool({
 }) {
   function editSchool(e) {
     const section = e.target.className;
-    const newObj = { ...activeSchool, [section]: e.target.value };
+    const newObj = { ...activeSchool, [section]: e.target.value};
     console.log(newObj);
     setActiveSchool(newObj);
     handleSetSchools(activeSchool.id, newObj)
@@ -165,7 +163,7 @@ function saveSchool(id){
         value={activeSchool.degree}
         onChange={(e) => editSchool(e)}
       />
-      <div>
+      <div className="dates-container">
         <input
           type="month"
           className="startDate"

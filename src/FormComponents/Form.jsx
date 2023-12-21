@@ -1,5 +1,6 @@
 import Education from "./Education";
 import PersonalDetails from "./PersonalDetails";
+import Experience from "./Experience";
 export default function Form({
   details,
   setDetails,
@@ -11,6 +12,10 @@ export default function Form({
   edDrawer,
   schools,
   setSchools,
+  activeExperience,
+  setActiveExperience,
+  experiences,
+  setExperiences
 }) {
   return (
     <div className="form-elements">
@@ -24,6 +29,12 @@ export default function Form({
         edDrawer={edDrawer}
         schools={schools}
         setSchools={setSchools}
+      />
+      <Experience
+        experiences={experiences}
+        setExperiences={setExperiences}
+        activeExperience={activeExperience}
+        setActiveExperience={setActiveExperience}
       />
     </div>
   );

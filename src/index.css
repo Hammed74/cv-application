@@ -11,15 +11,25 @@
   flex-direction: column;
   align-items: center;
 }
+
+:root{
+  font-size: 16px;
+}
 body {
   background-color: #eeedea;
   padding: 2rem;
+    height: 100vh;
 }
 .body {
   display: flex;
   justify-content: center;
   gap: 2rem;
   max-width: 1280px;
+}
+
+h2{
+  font-size: 1.1rem;
+  border-bottom: 1px solid black;
 }
 
 .title {
@@ -31,7 +41,8 @@ body {
 }
 
 .resume {
-  height: 72vh;
+  width: 510px;
+  height: 733px;
   aspect-ratio: 0.772;
   background-color: rgb(255, 255, 255);
   border-radius: 2px;
@@ -39,16 +50,23 @@ body {
 }
 
 .personal-details {
-  height: 30vh;
-  width: 24rem;
+  padding: 1.5rem 0;
+  min-width: 250px;
+  width: 80%;
+  max-width: 500px;
   background-color: #c1ced3;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2rem;
   border-radius: 2px;
   justify-content: center;
   align-items: center;
   box-shadow: 5px 6px 13px -7px rgba(0, 0, 0, 0.55);
+}
+
+.your-name{
+  color: white;
+  font-size: 1.2rem;
 }
 
 .personal-details > input {
@@ -57,12 +75,13 @@ body {
   background-color: inherit;
   text-align: center;
   width: 80%;
-  font-size: 1rem;
+  font-size: 0.7rem;
   padding-bottom: 0.5rem;
 }
 
 .resume-details {
-  padding-top: 3rem;
+  padding: 1rem 0;
+  height: 15%;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -75,7 +94,8 @@ body {
 }
 
 .sub-resume-details > p {
-  padding: 2rem 1.5rem;
+  font-size: clamp(0.6rem, 0.5rem , 2rem);;
+  padding: 1rem 1.5rem;
   color: white;
 }
 
@@ -88,12 +108,13 @@ body {
 .education-details {
   padding: 2rem 0;
   position: relative;
-  height: fit-content;
-  width: 24rem;
+  min-width: 250px;
+  width: 80%;
+  max-width: 500px;
   background-color: #c1ced3;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2rem;
   border-radius: 2px;
   justify-content: center;
   align-items: center;
@@ -106,8 +127,21 @@ body {
   background-color: inherit;
   text-align: center;
   width: 80%;
-  font-size: 1rem;
+  font-size: 0.7rem;
   padding-bottom: 0.5rem;
+}
+.dates-container{
+  display: flex;
+  justify-content: space-between;
+}
+.startDate{
+  width: 40%;
+  font-size: 0.5rem;
+}
+
+.endDate{
+  width: 40%;
+  font-size: 0.5rem;
 }
 
 .resume-container {
@@ -118,7 +152,7 @@ body {
   padding-top: 1rem;
 }
 .resume-education > h3 {
-  font-size: 1.2rem;
+  font-size: 0.8rem;
   font-weight: 500;
 }
 
@@ -141,7 +175,7 @@ hr {
 }
 
 .resume-university {
-  font-size: 1.2rem;
+  font-size: 0.8rem;
   font-weight: 700;
   margin-bottom: 0.4rem;
 }
@@ -149,15 +183,16 @@ hr {
 .resume-degree {
   grid-area: 2/1/3/2;
   margin-left: 2rem;
+  font-size: 0.7rem;
 }
 .resume-start {
   grid-area: 1/2/2/3;
-  font-size: 0.8rem;
+  font-size: 0.5rem;
   text-align: right;
 }
 
 .resume-end {
-  font-size: 0.8rem;
+  font-size: 0.5rem;
   grid-area: 1/3/2/4;
   text-align: right;
 }
@@ -165,7 +200,7 @@ hr {
 .resume-location {
   grid-area: 2/2/3/4;
   margin-top: 0.3rem;
-  font-size: 0.9rem;
+  font-size: 0.6rem;
   text-align: right;
 }
 
@@ -189,18 +224,20 @@ li {
   border-bottom: 1px solid black;
   width: 85%;
   text-align: center;
-  padding: 1rem 0;
+  padding: 0.3rem 0;
   text-transform: uppercase;
   font-weight: 700;
   cursor: pointer;
   position: relative;
+  font-size: 0.7rem;
 }
 
 .back-button{
   border: 1px solid black;
-  padding: 2px 4px;
   cursor: pointer;
   transition: 0.2s ease-in-out;
+  font-size: 0.6rem;
+  padding: 2px 4px;
 }
 
 .back-button:hover{
@@ -211,6 +248,7 @@ li {
   padding: 2px 4px;
   cursor: pointer;
   transition: 0.2s ease-in-out;
+  font-size: 0.6rem;
 }
 
 .save:hover{
@@ -235,7 +273,7 @@ li {
   display: inline;
   position: absolute;
   right: 5px;
-  bottom: 13px;
+  bottom: 5px;
   cursor: pointer;
 }
 
@@ -250,4 +288,103 @@ li {
   100%{
     background-color: #c1ced3;
   }
+}
+
+.experience-details {
+  padding: 2rem 0;
+  position: relative;
+  min-width: 250px;
+  width: 80%;
+  max-width: 500px;
+  background-color: #c1ced3;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-radius: 2px;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5px 6px 13px -7px rgba(0, 0, 0, 0.55);
+}
+
+.resume-experience > h3{
+      font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.experience-grid{
+  display: grid;
+  grid-template-columns: 1fr 12% 12%;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+
+
+.exp-job{
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+}
+
+.exp-title{
+  grid-area: 2/1/3/2;
+      margin-left: 2rem;
+    font-size: 0.7rem;
+}
+.exp-location{
+  grid-area: 2/2/3/4;
+  margin-top: 0.3rem;
+    font-size: 0.6rem;
+    text-align: right;
+}
+.exp-start{
+  grid-area: 1/2/2/3;
+  font-size: 0.5rem;
+  text-align: right;
+}
+
+.exp-end{
+  grid-area: 1/3/2/4;
+  font-size: 0.5rem;
+  text-align: right;
+}
+.exp-dates p{
+font-size: 0.5rem;
+    text-align: right;
+}
+.exp-notes{
+  font-size: 0.6rem;
+  grid-area: 3/1/4/4;
+    margin-left: 2rem;
+}
+
+.experience-details input{
+  border: none;
+  border-bottom: 1px solid rgb(41, 41, 41);
+  background-color: inherit;
+  text-align: center;
+  width: 80%;
+  font-size: 0.7rem;
+  padding-bottom: 0.5rem;
+}
+
+.exp-dates{
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 0.1rem;
+}
+
+.exp-dates input{
+  width: 36%;
+}
+
+.notes{
+    border: 1px solid rgb(41, 41, 41);
+  border-bottom: 1px solid rgb(41, 41, 41);
+  background-color: inherit;
+  text-align: center;
+  width: 80%;
+  font-size: 0.7rem;
+  padding-bottom: 0.5rem;
+  max-width: 100%;
+  resize: vertical;
 }

@@ -1,9 +1,9 @@
-export default function ResumeEducation({education, activeSchool, edDrawer, schools}){
+export default function ResumeEducation({activeSchool, schools}){
     function formatMonthYear(dateString) {
   const [year, month] = dateString.split('-');
   const monthNames = [
-    'January', 'February', 'March', 'April', 'May', 'June', 
-    'July', 'August', 'September', 'October', 'November', 'December'
+    'Jan', 'Feb', 'March', 'April', 'May', 'June', 
+    'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'
   ];
 
   const monthIndex = parseInt(month, 10) - 1; // Subtracting 1 since month indices start from 0

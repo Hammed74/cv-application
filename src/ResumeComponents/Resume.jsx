@@ -1,5 +1,6 @@
 import ResumePersonalDetails from "./ResumePersonalDetails";
 import ResumeEducation from "./ResumeEducation";
+import ResumeExperience from "./ResumeExperience";
 
 export default function Resume({ details, education, activeSchool, schools }) {
   return (
@@ -10,6 +11,7 @@ export default function Resume({ details, education, activeSchool, schools }) {
         </div>
         <div className="resume-container">
           <ResumeEducation education={education} activeSchool={activeSchool} schools={schools}/>
+          <ResumeExperience />
         </div>
       </div>
     </>
