@@ -10,15 +10,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+        padding-bottom: 2rem;
 }
 
 :root{
   font-size: 16px;
 }
 body {
-  background-color: #eeedea;
-  padding: 2rem;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
     height: 100vh;
+    margin-top: 1rem;
 }
 .body {
   display: flex;
@@ -42,8 +45,7 @@ h2{
 
 .resume {
   width: 510px;
-  height: 733px;
-  aspect-ratio: 0.772;
+  max-height: 733;
   background-color: rgb(255, 255, 255);
   border-radius: 2px;
   box-shadow: 10px 10px 13px -7px rgba(0, 0, 0, 0.55);
@@ -102,7 +104,7 @@ h2{
 .form-elements {
   display: flex;
   flex-direction: column;
-  min-height: 733px;
+  max-height: 733px;
   gap: 2rem;
   justify-content: space-between;
 }
