@@ -54,7 +54,7 @@ h2{
   min-width: 250px;
   width: 80%;
   max-width: 500px;
-  background-color: #c1ced3;
+  background-color: rgb(227, 116, 116);
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -102,7 +102,9 @@ h2{
 .form-elements {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  min-height: 733px;
+  gap: 2rem;
+  justify-content: space-between;
 }
 
 .education-details {
@@ -111,10 +113,10 @@ h2{
   min-width: 250px;
   width: 80%;
   max-width: 500px;
-  background-color: #c1ced3;
+  background-color: rgb(113, 177, 255);
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
   border-radius: 2px;
   justify-content: center;
   align-items: center;
@@ -212,6 +214,12 @@ hr {
   font-size: 2rem;
   background-color: inherit;
   cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.close:hover{
+  color: red;
+  font-size: 2.6rem;
 }
 ul{
   width: 100%;
@@ -296,7 +304,7 @@ li {
   min-width: 250px;
   width: 80%;
   max-width: 500px;
-  background-color: #c1ced3;
+  background-color: rgb(115, 227, 115);
   display: flex;
   flex-direction: column;
   gap: 1rem;

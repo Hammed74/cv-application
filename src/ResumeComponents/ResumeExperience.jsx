@@ -1,9 +1,9 @@
-export default function ResumeExperience(){
+export default function ResumeExperience({experiences}){
     return(
         <div className="resume-experience">
         <h3>Experience</h3>
         <div className="break"></div>
-        <ExperienceList />
+        <ExperienceList experiences={experiences} />
         </div>
     )
 }
@@ -22,25 +22,13 @@ export default function ResumeExperience(){
 }
 
 
-
-const expObj = [
-  {
-    job: "MicroSoft",
-    title: "Software Engineer",
-    location: "Seattle",
-    startDate: "2021-08",
-    endDate: "Ongoing",
-    notes: "Led team of Engineers, Invented Office 365, Hired Bill Gates",
-  },
-];
-
-function ExperienceList(){
+function ExperienceList({experiences}){
     return(
-        expObj.map(obj => {
+        experiences.map(obj => {
             return (
-              <div className="experience-grid" key={obj.job}>
+              <div className="experience-grid" key={obj.id}>
                 <p className="exp-job">{obj.job}</p>
-                <p className="exp-title">{obj.title}</p>
+                <p className="exp-title">{obj.jobTitle}</p>
                 <p className="exp-location">{obj.location}</p>
                   <p className="exp-start">{formatMonthYear(obj.startDate)}</p>
                   <p className="exp-end">{obj.endDate === 'Ongoing' ? obj.endDate : formatMonthYear(obj.endDate)}</p>

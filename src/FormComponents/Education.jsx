@@ -11,13 +11,11 @@ export default function Education({
   schools,
   setSchools,
 }) {
-  const [isOpen, setIsOpen] = useState(true);
   const educationRef = useRef(null)
-  function handleSetIsOpen() {
-    setIsOpen(!isOpen);
-    console.log(activeSchool);
-  }
 
+  function handleClose(){
+    setSchools([])
+  }
   function handleSave(){
     educationRef.current.style.animation = "saved 0.4s"
     setEdrawer(false)
@@ -25,7 +23,7 @@ export default function Education({
 
   return (
     <div ref={educationRef} className="education-details">
-      <div onClick={handleSetIsOpen} className="close">
+      <div onClick={handleClose} className="close">
         &times;
       </div>
       <h2>Education</h2>
