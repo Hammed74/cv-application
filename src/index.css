@@ -138,6 +138,8 @@ h2{
 .dates-container{
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  width: 90%;
 }
 .startDate{
   width: 40%;
@@ -427,6 +429,15 @@ font-size: 0.5rem;
     gap: 1rem;
     width: 95vw;
     margin-bottom: 1rem;
+  }
+
+  .form-elements input{
+    font-size: 0.55rem;
+  }
+
+  .form-elements li{
+    text-align: left;
+    font-size: 0.55rem;
   }
 
   .education-details{
