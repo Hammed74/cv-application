@@ -28,7 +28,7 @@ function handleClose(){
     );
 }
 
-function ExperienceListForm({activeExperience, setActiveExperience, experiences, setExperiences}){
+function ExperienceListForm({setActiveExperience, experiences, setExperiences}){
 
     function onNewExperience(e){
         e.preventDefault()
@@ -64,7 +64,7 @@ function ExperienceListForm({activeExperience, setActiveExperience, experiences,
             })}
           </ul>
         ) : null}
-        <div style={{fontSize: '1.5rem'}} onClick={(e) => onNewExperience(e)}>+</div>
+        <div className="add-exp" onClick={(e) => onNewExperience(e)}>+</div>
       </>
     );
 }
@@ -87,11 +87,14 @@ function CurrentExperience({
   }
 
   function onBack() {
-    setExperiences(experiences.filter((exp) => exp.id !== activeExperience.id));
+    if(activeExperience.saved !== true){
+    setExperiences(experiences.filter((exp) => exp.id !== activeExperience.id))
+    }
     setActiveExperience(null);
   }
 
   function onSave(){
+    activeExperience.saved = true 
     setActiveExperience(null)
   }
 

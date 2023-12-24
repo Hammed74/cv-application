@@ -274,10 +274,11 @@ li {
 .add-school{
   font-size: 2rem;
   cursor: pointer;
+  transition: 0.3s ease-in-out;
 }
 
 .add-school:hover{
-      background-color: #8da7b1;
+      color: white;
 }
 
 .trash{
@@ -398,6 +399,16 @@ font-size: 0.5rem;
   padding-bottom: 0.5rem;
   max-width: 100%;
   resize: vertical;
+}
+
+.add-exp{
+  font-size: 2rem;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.add-exp:hover{
+  color: white;
 }
 
 @media screen and (max-width: 800px){

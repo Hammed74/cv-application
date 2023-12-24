@@ -11,14 +11,14 @@ export default function Education({
   schools,
   setSchools,
 }) {
-  const educationRef = useRef(null)
+  const educationRef = useRef(null);
 
-  function handleClose(){
-    setSchools([])
+  function handleClose() {
+    setSchools([]);
   }
-  function handleSave(){
-    educationRef.current.style.animation = "saved 0.4s"
-    setEdrawer(false)
+  function handleSave() {
+    educationRef.current.style.animation = "saved 0.4s";
+    setEdrawer(false);
   }
 
   return (
@@ -51,19 +51,14 @@ export default function Education({
   );
 }
 
-function UniversityList({
-  schools,
-  setSchools,
-  setActiveSchool,
-  setEdrawer,
-}) {
+function UniversityList({ schools, setSchools, setActiveSchool, setEdrawer }) {
   function handleSetActiveSchool(id) {
     const theSchool = schools.filter((school) => school.id === id);
     setActiveSchool(theSchool[0]);
     setEdrawer(true);
   }
 
-  function onAddSchool(){
+  function onAddSchool() {
     const newSchoolObj = {
       id: Date.now(),
       school: "Your University",
@@ -71,16 +66,16 @@ function UniversityList({
       startDate: "2019-01",
       endDate: "2023-01",
       location: "University Location",
-      saved: false
+      saved: false,
     };
-    setSchools([...schools,newSchoolObj])
-    setActiveSchool(newSchoolObj)
-    setEdrawer(true)
+    setSchools([...schools, newSchoolObj]);
+    setActiveSchool(newSchoolObj);
+    setEdrawer(true);
   }
 
-  function onDeleteItems(id, event){
-    event.stopPropagation()
-    setSchools(schools.filter(school => school.id != id))
+  function onDeleteItems(id, event) {
+    event.stopPropagation();
+    setSchools(schools.filter((school) => school.id != id));
   }
   return (
     <>
@@ -92,12 +87,19 @@ function UniversityList({
               key={school.id}
             >
               {school.school}
-              <p onClick={(event) => onDeleteItems(school.id,event)} className="trash">🗑️</p>
+              <p
+                onClick={(event) => onDeleteItems(school.id, event)}
+                className="trash"
+              >
+                🗑️
+              </p>
             </li>
           );
         })}
       </ul>
-      <div onClick={onAddSchool} className="add-school">+</div>
+      <div onClick={onAddSchool} className="add-school">
+        +
+      </div>
     </>
   );
 }
@@ -108,45 +110,44 @@ function CurrentSchool({
   setEdrawer,
   setSchools,
   schools,
-  handleSave
+  handleSave,
 }) {
   function editSchool(e) {
     const section = e.target.className;
-    const newObj = { ...activeSchool, [section]: e.target.value};
+    const newObj = { ...activeSchool, [section]: e.target.value };
     console.log(newObj);
     setActiveSchool(newObj);
-    handleSetSchools(activeSchool.id, newObj)
+    handleSetSchools(activeSchool.id, newObj);
   }
 
-  function handleSetSchools(id, newObj){
-    setSchools(schools.map(school => {
-            if(school.id === id){
-                return {...newObj}
-            }
-            return school
-        }))
+  function handleSetSchools(id, newObj) {
+    setSchools(
+      schools.map((school) => {
+        if (school.id === id) {
+          return { ...newObj };
+        }
+        return school;
+      })
+    );
   }
 
-  function handleBack(){
-    if(activeSchool.saved === false){
-        setSchools(schools.filter((school) => school.saved != false));
+  function handleBack() {
+    if (activeSchool.saved === false) {
+      setSchools(schools.filter((school) => school.saved != false));
     }
-    setEdrawer(false)
+    setEdrawer(false);
   }
-function saveSchool(id){
-    handleSave()
-        setSchools(
-          schools.map((school) => {
-            if (school.id === id) {
-              return {...school, saved: true};
-            }
-            return school;
-          })
-        );
-      }
-
-
-  console.log(activeSchool.school);
+  function saveSchool(id) {
+    handleSave();
+    setSchools(
+      schools.map((school) => {
+        if (school.id === id) {
+          return { ...school, saved: true };
+        }
+        return school;
+      })
+    );
+  }
   return (
     <>
       <input
@@ -182,10 +183,12 @@ function saveSchool(id){
         onChange={(e) => editSchool(e)}
       />
       <div className="buttons">
-          <div onClick={handleBack} className="back-button">
-            BACK
-          </div>
-          <div onClick={() => saveSchool(activeSchool.id)} className="save">SAVE</div>
+        <div onClick={handleBack} className="back-button">
+          BACK
+        </div>
+        <div onClick={() => saveSchool(activeSchool.id)} className="save">
+          SAVE
+        </div>
       </div>
     </>
   );

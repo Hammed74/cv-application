@@ -29,6 +29,7 @@ const defaultExperience =
     startDate: "2021-08",
     endDate: "Ongoing",
     notes: "Led team of Engineers, Invented Office 365, Hired Bill Gates",
+    saved: true
   }
 
 function App() {
