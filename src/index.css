@@ -10,7 +10,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-        padding-bottom: 2rem;
+  padding-bottom: 2rem;
 }
 
 :root{
@@ -33,6 +33,7 @@ body {
 h2{
   font-size: 1.1rem;
   border-bottom: 1px solid black;
+  text-align: center;
 }
 
 .title {
@@ -44,8 +45,8 @@ h2{
 }
 
 .resume {
-  width: 510px;
-  max-height: 733;
+  width: min(95vw,510px);
+  height: min(80vh,733px);
   background-color: rgb(255, 255, 255);
   border-radius: 2px;
   box-shadow: 10px 10px 13px -7px rgba(0, 0, 0, 0.55);
@@ -397,4 +398,34 @@ font-size: 0.5rem;
   padding-bottom: 0.5rem;
   max-width: 100%;
   resize: vertical;
+}
+
+@media screen and (max-width: 800px){
+  .body{
+    display: grid;
+    grid-template-rows: 1fr auto;
+    justify-items: center;
+  }
+
+  .resume{
+    grid-area: 1/1/2/2;
+  }
+
+  .form-elements{
+    flex-direction: row;
+    gap: 1rem;
+    width: 95vw;
+    margin-bottom: 1rem;
+  }
+
+  .education-details{
+    min-width: 30%;
+  }
+
+  .personal-details{
+    min-width: 30%;
+  }
+  .experience-details{
+    min-width: 30%;
+  }
 }
